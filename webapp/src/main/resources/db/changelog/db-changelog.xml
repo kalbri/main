@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="001" author="kalbri">
+        <comment>Create table Product with columns</comment>
+        <createTable tableName="Product">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="code" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="typeGebinde" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="typeLTR" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="colorVariant" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="colorCode" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="colorName" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="colorType" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="quantity" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="location" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="002" author="kalbri">
+        <preConditions onFail="CONTINUE">
+            <tableExists tableName="Product"/>
+        </preConditions>
+        <comment>Insert data into Product table for testing purposes</comment>
+        <sql>
+            INSERT INTO product (
+                                    id,
+                                    code,
+                                    typeGebinde,
+                                    typeLTR,
+                                    colorVariant,
+                                    colorCode,
+                                    colorName,
+                                    colorType,
+                                    quantity,
+                                    date,
+                                    location)
+            VALUES (
+                       1,
+                       '348920#FT 41725#3',
+                       'Gebinde',
+                       '(LTR)',
+                       '3489-20 GW 306 Sonder FT 41725 3 20',
+                       'FT 41705',
+                       'weiß',
+                       'lasierend 3',
+                       '20',
+                       '29.08.2023',
+                       'location1');
+
+            insert into product (
+                                    id,
+                                    code,
+                                    typeGebinde,
+                                    typeLTR,
+                                    colorVariant,
+                                    colorCode,
+                                    colorName,
+                                    colorType,
+                                    quantity,
+                                    date,
+                                    location)
+            values (
+                       2,
+                       '180720#FT 41705 weiß lasierend#3',
+                       'Gebinde',
+                       '(LTR)',
+                       '1807-20 LW-715E/30 Sonder',
+                       'FT 41705',
+                       'weiß',
+                       'lasierend 3',
+                       '20',
+                       '29.08.2023',
+                       'location2');
+
+            insert into product (
+                                    id,
+                                    code,
+                                    typeGebinde,
+                                    typeLTR,
+                                    colorVariant,
+                                    colorCode,
+                                    colorName,
+                                    colorType,
+                                    quantity,
+                                    date,
+                                    location)
+            values (
+                       3,
+                       '169220#RAL 7006#3',
+                       'Gebinde',
+                       '(LTR)',
+                       '1692-20 DW 601/20 Aqua-Stopp Sonder RAL 7006 3 20',
+                       'FT 41705',
+                       'weiß',
+                       'lasierend 3',
+                       '20',
+                       '29.08.2023',
+                       'location3');
+
+            insert into product (
+                                    id,
+                                    code,
+                                    typeGebinde,
+                                    typeLTR,
+                                    colorVariant,
+                                    colorCode,
+                                    colorName,
+                                    colorType,
+                                    quantity,
+                                    date,
+                                    location)
+            values (
+                       4,
+                       '180720#FT 41242#3',
+                       'Gebinde',
+                       '(LTR)',
+                       '1807-20 LW-715E/30 Sonder FT 41242 3 20',
+                       'FT 41242',
+                       'weiß',
+                       'lasierend 3',
+                       '20',
+                       '07.12.2023',
+                       'BV: Lager');
+
+            insert into product (
+                                    id,
+                                    code,
+                                    typeGebinde,
+                                    typeLTR,
+                                    colorVariant,
+                                    colorCode,
+                                    colorName,
+                                    colorType,
+                                    quantity,
+                                    date,
+                                    location)
+            values (
+                       5,
+                       '180705#RC 660#1',
+                       'Gebinde',
+                       '(LTR)',
+                       '1807-05 LW-715E/30 Sonder RC 660 1 5',
+                       'RC 660',
+                       'color1',
+                       'color1',
+                       '5',
+                       '31.08.2023',
+                       'BV: Charlottenbogen');
+
+            insert into product (
+                                    id,
+                                    code,
+                                    typeGebinde,
+                                    typeLTR,
+                                    colorVariant,
+                                    colorCode,
+                                    colorName,
+                                    colorType,
+                                    quantity,
+                                    date,
+                                    location)
+            values (
+                       6,
+                       '180705#RC 660#1',
+                       'Gebinde',
+                       '(LTR)',
+                       '1807-05 LW-715E/30 Sonder RC 660 1 5',
+                       'RC 660',
+                       'color1',
+                       'color1',
+                       '5',
+                       '31.08.2023',
+                       'BV: Charlottenbogen');
+
+            insert into product (
+                                    id,
+                                    code,
+                                    typeGebinde,
+                                    typeLTR,
+                                    colorVariant,
+                                    colorCode,
+                                    colorName,
+                                    colorType,
+                                    quantity,
+                                    date,
+                                    location)
+            values (
+                       7,
+                       '169220#RAL 7039#1',
+                       'Gebinde',
+                       '(LTR)',
+                       '1692-20 DW 601/20 Aqua-Stopp Sonder RAL 7039 1 20',
+                       'NCS S-2010-',
+                       'color1',
+                       'Y20R 1 20',
+                       '20',
+                       '15.09.2023',
+                       'BV: Schopenhauer Straße');
+
+            insert into product (
+                                    id,
+                                    code,
+                                    typeGebinde,
+                                    typeLTR,
+                                    colorVariant,
+                                    colorCode,
+                                    colorName,
+                                    colorType,
+                                    quantity,
+                                    date,
+                                    location)
+            values (
+                       8,
+                       '169220#NCS S-2010-Y20R#1',
+                       'Gebinde',
+                       '(LTR)',
+                       '1692-20 DW 601/20 Aqua-Stopp Sonder',
+                       'NCS S-2010-',
+                       'color2',
+                       'Y20R 1 20',
+                       '20',
+                       '15.09.2023',
+                       'BV: Schopenhauer Straße');
+        </sql>
+    </changeSet>
+
+
+</databaseChangeLog>
